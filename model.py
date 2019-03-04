@@ -10,7 +10,6 @@ from sklearn import metrics
 import sys
 
 year = 2018
-
 password = sys.argv[1]
 engine = create_engine('mysql+pymysql://shank_evan:' + str(password) + '@marchmadness.czez3i9mtzt9.us-east-1.rds.amazonaws.com:3306/marchmadness')
 conn = engine.connect()
