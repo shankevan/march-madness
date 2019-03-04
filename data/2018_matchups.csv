@@ -1,0 +1,64 @@
+matchup_id,Year,Team,Opponent,Round,Location_City,Location_State,DOW
+1,2018,Virginia,UMBC,Round of 64,Charlotte,North Carolina,Friday
+2,2018,Creighton,Kansas State,Round of 64,Charlotte,North Carolina,Friday
+3,2018,Kentucky,Davidson,Round of 64,Boise,Idaho,Thursday
+4,2018,Arizona,Buffalo,Round of 64,Boise,Idaho,Thursday
+5,2018,"Miami, Florida","Loyola, Illinois",Round of 64,Dallas,Texas,Thursday
+6,2018,Tennessee,Wright State,Round of 64,Dallas,Texas,Thursday
+7,2018,Nevada,Texas,Round of 64,Nashville,Tennessee,Friday
+8,2018,Cincinnati,Georgia State,Round of 64,Nashville,Tennessee,Friday
+9,2018,"Xavier, Ohio",Texas Southern,Round of 64,Nashville,Tennessee,Friday
+10,2018,Missouri,Florida State,Round of 64,Nashville,Tennessee,Friday
+11,2018,Ohio State,South Dakota State,Round of 64,Boise,Idaho,Thursday
+12,2018,Gonzaga,North Carolina-Greensboro,Round of 64,Boise,Idaho,Thursday
+13,2018,Houston,San Diego State,Round of 64,Wichita,Kansas,Thursday
+14,2018,Michigan,Montana,Round of 64,Wichita,Kansas,Thursday
+15,2018,Texas A&M,Providence,Round of 64,Charlotte,North Carolina,Friday
+16,2018,North Carolina,Lipscomb,Round of 64,Charlotte,North Carolina,Friday
+17,2018,Villanova,Radford,Round of 64,Pittsburgh,Pennsylvania,Thursday
+18,2018,Virginia Tech,Alabama,Round of 64,Pittsburgh,Pennsylvania,Thursday
+19,2018,West Virginia,Murray State,Round of 64,San Diego,California,Friday
+20,2018,Wichita State,Marshall,Round of 64,San Diego,California,Friday
+21,2018,Florida,St. Bonaventure,Round of 64,Dallas,Texas,Thursday
+22,2018,Texas Tech,Stephen F. Austin,Round of 64,Dallas,Texas,Thursday
+23,2018,Arkansas,Butler,Round of 64,Detroit,Michigan,Friday
+24,2018,Purdue,California State-Fullerton,Round of 64,Detroit,Michigan,Friday
+25,2018,Kansas,Pennsylvania,Round of 64,Wichita,Kansas,Thursday
+26,2018,Seton Hall,North Carolina State,Round of 64,Wichita,Kansas,Thursday
+27,2018,Clemson,New Mexico State,Round of 64,San Diego,California,Friday
+28,2018,Auburn,"Charleston, South Carolina",Round of 64,San Diego,California,Friday
+29,2018,Texas Christian,Syracuse,Round of 64,Detroit,Michigan,Friday
+30,2018,Michigan State,Bucknell,Round of 64,Detroit,Michigan,Friday
+31,2018,Rhode Island,Oklahoma,Round of 64,Pittsburgh,Pennsylvania,Thursday
+32,2018,Duke,Iona,Round of 64,Pittsburgh,Pennsylvania,Thursday
+1,2018,,,Round of 32,Charlotte,North Carolina,Sunday
+2,2018,,,Round of 32,Boise,Idaho,Saturday
+3,2018,,,Round of 32,Dallas,Texas,Saturday
+4,2018,,,Round of 32,Nashville,Tennessee,Sunday
+5,2018,,,Round of 32,Nashville,Tennessee,Sunday
+6,2018,,,Round of 32,Boise,Idaho,Saturday
+7,2018,,,Round of 32,Wichita,Kansas,Saturday
+8,2018,,,Round of 32,Charlotte,North Carolina,Sunday
+9,2018,,,Round of 32,Pittsburgh,Pennsylvania,Saturday
+10,2018,,,Round of 32,San Diego,California,Sunday
+11,2018,,,Round of 32,Dallas,Texas,Saturday
+12,2018,,,Round of 32,Detroit,Michigan,Sunday
+13,2018,,,Round of 32,Wichita,Kansas,Saturday
+14,2018,,,Round of 32,San Diego,California,Sunday
+15,2018,,,Round of 32,Detroit,Michigan,Sunday
+16,2018,,,Round of 32,Pittsburgh,Pennsylvania,Saturday
+1,2018,,,Sweet Sixteen,Atlanta,Georgia,Thursday
+2,2018,,,Sweet Sixteen,Atlanta,Georgia,Thursday
+3,2018,,,Sweet Sixteen,Los Angeles,California,Thursday
+4,2018,,,Sweet Sixteen,Los Angeles,California,Thursday
+5,2018,,,Sweet Sixteen,Boston,Massachusetts,Friday
+6,2018,,,Sweet Sixteen,Boston,Massachusetts,Friday
+7,2018,,,Sweet Sixteen,Omaha,Nebraska,Friday
+8,2018,,,Sweet Sixteen,Omaha,Nebraska,Friday
+1,2018,,,Elite Eight,Atlanta,Georgia,Saturday
+2,2018,,,Elite Eight,Los Angeles,California,Saturday
+3,2018,,,Elite Eight,Boston,Massachusetts,Sunday
+4,2018,,,Elite Eight,Omaha,Nebraska,Sunday
+1,2018,,,National Semifinals,San Antonio,Texas,Saturday
+2,2018,,,National Semifinals,San Antonio,Texas,Saturday
+1,2018,,,National Championship,San Antonio,Texas,Monday
