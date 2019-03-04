@@ -1,3 +1,4 @@
+# Imports
 import pandas as pd
 import numpy as np
 import math
@@ -9,13 +10,18 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
 import sys
 
+# Establishes the year that the model predicts. There need to be matching supporting data files in the data directory for this year.
 year = 2018
+
+# Connects to RDS instance with password passed in from script call
 password = sys.argv[1]
 engine = create_engine('mysql+pymysql://shank_evan:' + str(password) + '@marchmadness.czez3i9mtzt9.us-east-1.rds.amazonaws.com:3306/marchmadness')
 conn = engine.connect()
 
 # TODO model_data should just be the entire table, if I pull that in, I can create a dataframe off of a restricted columnset. If this is established early
-# on, that same columnset can be applied to the round-to round prediction data. This would make feature inclusion/exclusion way easier than editing sql queries
+# TODO on, that same columnset can be applied to the round-to round prediction data. This would make feature inclusion/exclusion way easier than editing sql queries
+
+# Creates the dataframe that the model will train itself on as differences in metrics between a team and its opponent.
 model_data = pd.read_sql("""SELECT (RPI - Opponent_RPI) AS RPI, (Seed-Opponent_Seed) AS Seed, (team_luck - opp_luck) as Luck,
                        (team_kp_rank - opp_kp_rank) AS Rank, (team_adj_o - opp_adj_o) as AdjO, (team_adj_d - opp_adj_d) as AdjD,
                        (team_adj_t - opp_adj_t) as AdjT, (team_opp_o - opp_team_o) as OppO, (team_opp_d - opp_team_d) as OppD,
@@ -25,9 +31,10 @@ model_data = pd.read_sql("""SELECT (RPI - Opponent_RPI) AS RPI, (Seed-Opponent_S
 # TODO - oversample 'upsets'. First define what an upset is based on seeding, then oversample that group in model training.
 # TODO - train a separate model only on the 'middling' matchups (eliminate 1-16, 2-15, 3-14, 4-13) and provide potential upset picks?
 
+# Using logistic regression for the model
 predictor = LogisticRegression(solver='lbfgs')
 
-#randomly assigns data into a test and training set
+#randomly assigns selected data into a test and training set
 model_data.loc[:,'is_train'] = np.random.uniform(0, 1, len(model_data)) <= .75
 train = model_data.query('is_train == True')
 test = model_data.query('is_train == False')
@@ -42,12 +49,15 @@ features = model_data.loc[:, model_data.columns != 'WinLoss'].columns.copy()
 x_train, y_train = train[features].copy(), train['WinLoss'].copy()
 
 # TODO - given lack of tournament games, it may be worth looking into oversampling here to see if performance improves
-# TODO - normalize features so the feature importance is clearer for interpretability (takes different weights out of picture)
+
+# Fits the model to the training data, and scores the predictions so we have some performance benchmarks
 predictor.fit(x_train, y_train)
 predictions = predictor.predict(test[features])
 y_test = test['WinLoss'].copy()
 print(metrics.classification_report(y_test, predictions))
 
+# This determines which features were most heavily weighted
+# TODO - normalize features so the feature importance is clearer for interpretability (takes different weights out of picture)
 features_values = []
 for x in range(len(features)):
     features_values.append([features[x],predictor.coef_[0,x]])
