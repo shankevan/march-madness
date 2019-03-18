@@ -224,14 +224,13 @@ if(aggregate == True):
     # Help with some common name mismatches here
     # 1. Create mapping of name mismatches according to some other common identifier? And then replace those names in the sampled game data?
 
-    
     sampled_games.to_sql('tourny_games', conn, if_exists='replace', index=False)
 
     # I think this is the current bracket data that I manually input. Not a huge deal, but could be cool to automagically pull from espn
-    team_data = pd.read_csv('data/' + str(run_year) + '_team_data.csv')
+    team_data = pd.read_csv('data/' + str(run_year) + '/team_data.csv')
     team_data.to_sql('team_data', conn, if_exists='replace', index=False)
 
-    opponent_data = pd.read_csv('data/' + str(run_year) + '_opponent_data.csv')
+    opponent_data = pd.read_csv('data/' + str(run_year) + '/opponent_data.csv')
     opponent_data.to_sql('opponent_data', conn, if_exists='replace', index=False)
 
     # Create the mass model data table that the model script pulls from to run the model

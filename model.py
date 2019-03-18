@@ -4,14 +4,13 @@ import numpy as np
 import math
 from scipy import stats
 from sqlalchemy import create_engine
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegressionCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
 import sys
 
 # Establishes the year that the model predicts. There need to be matching supporting data files in the data directory for this year.
-year = 2018
 
 # Connects to RDS instance with password passed in from script call
 password = sys.argv[1]
@@ -32,7 +31,7 @@ model_data = pd.read_sql("""SELECT (RPI - Opponent_RPI) AS RPI, (Seed-Opponent_S
 # TODO - train a separate model only on the 'middling' matchups (eliminate 1-16, 2-15, 3-14, 4-13) and provide potential upset picks?
 
 # Using logistic regression for the model
-predictor = LogisticRegression(solver='lbfgs')
+predictor = LogisticRegressionCV(solver='lbfgs', max_iter=1000)
 
 #randomly assigns selected data into a test and training set
 model_data.loc[:,'is_train'] = np.random.uniform(0, 1, len(model_data)) <= .75
@@ -68,7 +67,7 @@ print('\n')
 #SEED DATA FOR THE MODEL RUN
 rounds= {1:"Round of 64", 2:"Round of 32", 3:"Sweet Sixteen", 4:"Elite Eight", 5:"National Semifinals", 6:"National Championship"}
 games = {1:32, 2:48, 3:56, 4:60, 5:62, 6:0}
-matchups = pd.read_csv('data/' + str(year) + "_matchups.csv")
+matchups = pd.read_csv('data/' + str(year) + "/matchups.csv")
 
 for i in range(1,7):
 
